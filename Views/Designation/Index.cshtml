@@ -1,0 +1,30 @@
+﻿@model IEnumerable<TrainingMVC.Model.Entity.Designation>
+
+<h1>Designations</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Designation</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var designation in Model)
+        {
+            <tr>
+                <td>@designation.Id</td>
+                <td>@designation.Name</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@designation.Id" class="btn btn-secondary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@designation.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
